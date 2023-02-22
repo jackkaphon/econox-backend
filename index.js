@@ -25,7 +25,10 @@ app.get('/', (req, res) => {
     res.cookie("user", 1, {
         maxAge: 86400 * 1000, 
         httpOnly: true, 
-        secure: true
+        secure: true,
+        sameSite: 'none',
+        path: '/',
+        domain: '.wannabedevs.com'
     })
     res.send('Hello World!')
 })
