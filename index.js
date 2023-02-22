@@ -32,7 +32,7 @@ app.post('/login', (req, res) => {
         secure: true,
         sameSite: 'none',
         path: '/',
-        domain: '.wannabedevs.com'
+        domain: 'wannabedevs.com'
     })
     res.send('success!')
 })
