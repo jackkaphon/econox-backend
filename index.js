@@ -31,8 +31,8 @@ app.post('/login', (req, res) => {
         httpOnly: true,
         secure: true,
         sameSite: 'none',
-        path: '/',
-        domain: 'wannabedevs.com'
+        // path: '/',
+        // domain: 'wannabedevs.com'
     })
     res.send('success!')
 })
