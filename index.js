@@ -22,7 +22,11 @@ app.use(cors({
 }))
 
 app.get('/', (req, res) => {
-    res.cookie("user", 1)
+    res.cookie("user", 1, {
+        maxAge: 86400 * 1000, 
+        httpOnly: true, 
+        secure: true
+    })
     res.send('Hello World!')
 })
 
