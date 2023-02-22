@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
         secure: true,
         sameSite: 'none',
         path: '/',
-        domain: 'www.wannabedevs.com'
+        // domain: 'www.wannabedevs.com'
     })
     res.send('Hello World!')
 })
