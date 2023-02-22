@@ -30,9 +30,9 @@ app.post('/login', (req, res) => {
         maxAge: 86400 * 1000,
         httpOnly: true,
         secure: true,
-        // sameSite: 'none',
-        path: '/',
-        domain: 'www.wannabedevs.com'
+        sameSite: 'none',
+        // path: '/',
+        domain: 'wannabedevs.com'
     })
     res.send('success!')
 })
