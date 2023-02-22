@@ -34,6 +34,7 @@ app.post('/login', (req, res) => {
         path: '/',
         domain: '.wannabedevs.com'
     })
+    res.send('success!')
 })
 
 app.listen(port, () => {
