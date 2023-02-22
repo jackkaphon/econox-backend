@@ -9,10 +9,10 @@ const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'admin',
     password: 'password',
-    database: 'jack'
+    database: 'econox'
 })
 
-// connection.connect()
+connection.connect()
 
 app.use(cookieParser())
 app.use(cors({
@@ -22,15 +22,18 @@ app.use(cors({
 }))
 
 app.get('/', (req, res) => {
+    res.send('Hello World!')
+})
+
+app.post('/login', (req, res) => {
     res.cookie("user", 1, {
-        maxAge: 86400 * 1000, 
-        httpOnly: true, 
+        maxAge: 86400 * 1000,
+        httpOnly: true,
         secure: true,
         sameSite: 'none',
         path: '/',
         domain: '.wannabedevs.com'
     })
-    res.send('Hello World!')
 })
 
 app.listen(port, () => {
