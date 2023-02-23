@@ -37,6 +37,14 @@ app.post('/login', (req, res) => {
     res.send('success!')
 })
 
+app.get('/getUser', (req, res) => {
+    connection.query('SELECT * FROM user', (err, rows, fields) => {
+        if (err) throw err
+      
+        res.send('The solution is: ', rows[0])
+      })
+})
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
