@@ -5,20 +5,20 @@ const cors = require('cors')
 var cookieParser = require('cookie-parser')
 
 const mysql = require('mysql')
-// const connection = mysql.createConnection({
-//     host: '127.0.0.1',
-//     user: 'admin',
-//     password: 'password',
-//     database: 'econox'
-// })
-
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '123456',
-    database: 'econox',
-    port: 6033
+    host: '127.0.0.1',
+    user: 'admin',
+    password: 'password',
+    database: 'econox'
 })
+
+// const connection = mysql.createConnection({
+//     host: 'localhost',
+//     user: 'root',
+//     password: '123456',
+//     database: 'econox',
+//     port: 6033
+// })
 
 connection.connect()
 
