@@ -5,11 +5,19 @@ const cors = require('cors')
 var cookieParser = require('cookie-parser')
 
 const mysql = require('mysql')
+// const connection = mysql.createConnection({
+//     host: '127.0.0.1',
+//     user: 'admin',
+//     password: 'password',
+//     database: 'econox'
+// })
+
 const connection = mysql.createConnection({
-    host: '127.0.0.1',
-    user: 'admin',
-    password: 'password',
-    database: 'econox'
+    host: 'localhost',
+    user: 'root',
+    password: '123456',
+    database: 'econox',
+    port: 6033
 })
 
 connection.connect()
@@ -38,12 +46,12 @@ app.post('/login', (req, res) => {
 })
 
 app.get('/getUser', (req, res) => {
-    // connection.query('SELECT * FROM user', (err, rows, fields) => {
-    //     if (err) throw err
+    connection.query('SELECT * FROM user', (err, rows, fields) => {
+        if (err) throw err
 
-    //     res.send('The solution is: ', rows[0])
-    // })
-    res.send('getuser')
+        res.send(rows)
+    })
+    // res.send('getuser')
 })
 
 app.listen(port, () => {
