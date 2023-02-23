@@ -38,11 +38,12 @@ app.post('/login', (req, res) => {
 })
 
 app.get('/getUser', (req, res) => {
-    connection.query('SELECT * FROM user', (err, rows, fields) => {
-        if (err) throw err
-      
-        res.send('The solution is: ', rows[0])
-      })
+    // connection.query('SELECT * FROM user', (err, rows, fields) => {
+    //     if (err) throw err
+
+    //     res.send('The solution is: ', rows[0])
+    // })
+    res.send('getuser')
 })
 
 app.listen(port, () => {
